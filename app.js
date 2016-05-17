@@ -25,9 +25,10 @@ NotesApplication.prototype.search(search_text){
 	var result = "Showing results for search"
 	for(i=0; i<this.notesList.length; i++){
 		if(this.notesList.indexOf(search_text) !== -1){
-
-		}
+			note = "Notes ID: " +i+ "\n" + this.notesList[i] + "\n" +"By Author "+ author;
+		}	result += note;
 	}
+	console.log(result)
 }
 
 NotesApplication.prototype.delete(note_id){
