@@ -18,14 +18,25 @@ NotesApplication.prototype.listNotes(){
 }
 
 NotesApplication.prototype.get(note_id){
-	return this.notesList[note_id];
+	console.log(this.notesList[note_id]);
 }
 
 NotesApplication.prototype.search(search_text){
 	var result = "Showing results for search"
 	for(i=0; i<this.notesList.length; i++){
 		if(this.notesList.indexOf(search_text) !== -1){
-			
+
 		}
+	}
+}
+
+NotesApplication.prototype.delete(note_id){
+	if(this.notesList.length> note_id)
+	this.notesList.splice(note_id, 1)
+}
+
+NotesApplication.prototype.edit(note_id, new_content){
+	if(this.notesList.length > note_id){
+		this.notesList[note_id] = new_content;
 	}
 }
