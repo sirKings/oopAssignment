@@ -44,12 +44,3 @@ NotesApplication.prototype.edit = function(note_id, new_content){
 	}
 };
 
-var peete = new NotesApplication("peete");
-peete.create("hi, this is andela bootcamp");
-peete.create("hi, i love andela bootcamp3");
-peete.create("hi, this is andela bootcamp1");
-peete.get(1);
-peete.search("love");
-peete.delete(2);
-peete.edit(1, "no love lost, no  love found");
-
