@@ -13,12 +13,17 @@ NotesApplication.prototype.listNotes = function(){
 			console.log("Note ID: " +i);
 			console.log(this.notesList[i]);
 			console.log("By Author " + this.author );
+			
 		}
+		//this is to give an output for the jasmine test
+		return this.notesList;
 	}
 };
 
 NotesApplication.prototype.get = function(note_id){
 	console.log(this.notesList[note_id]);
+	//this is output for the jasmine test
+	return this.notesList[note_id];
 };
 
 NotesApplication.prototype.search = function(search_text){
@@ -28,19 +33,27 @@ NotesApplication.prototype.search = function(search_text){
 			var notes = "Note ID: "+i+" "+this.notesList[i]+ " " +"By Author "+this.author;
 			result += notes;
 			console.log(result);
+			//this is output for the jasmine test
+			return result;
 		}	
 	}
 	
 };
 
 NotesApplication.prototype.delete = function(note_id){
-	if(this.notesList.length> note_id)
-	this.notesList.splice(note_id, 1);
+	//created the variable and returned the splice command in order to test it with jasmine
+	var note_to_be_deleted;
+	if(this.notesList.length> note_id){
+		note_to_be_deleted = this.notesList[note_id];
+		return this.notesList.splice(note_id, 1);
+	}
+	
 };
 
 NotesApplication.prototype.edit = function(note_id, new_content){
 	if(this.notesList.length > note_id){
 		this.notesList[note_id] = new_content;
 	}
+	//this is to give an output for jasmine test
+	return this.notesList[note_id];
 };
-
