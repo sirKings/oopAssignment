@@ -24,11 +24,10 @@ describe('NotesApplication', function(){
 			expect(notesapp.get(note_id)).toBe(notesapp.notesList[note_id])
 		});
 
-		// it('should be able to return all notes in the notesList that contain the search_text', function(){
-		// 	var search_text;
-		// 	expect(notesapp.search(search_text)).toMatch(/search_text/);
-		// 	//expect(notesapp.notesList.indexOf(search_text)).not.toBe(-1);
-		// });
+		it('should be able to return all notes in the notesList that contain the search_text', function(){
+		 	notesapp.create("hello world");
+		 	expect(notesapp.search("hello")).toMatch("hello");
+		 });
 
 		it('should delete the note with the given id', function(){
 			//notesapp.delete(note_id);
